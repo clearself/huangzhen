@@ -29,6 +29,14 @@ export const constantRoutes: RouteRecordRaw[] = [
         meta: {
           title: $t('menu.data-dic.enumer')
         }
+      },
+      {
+        path: 'product',
+        component: () => import('@/views/data-dic/product/index.vue'),
+        name: 'views.data-dic.product',
+        meta: {
+          title: $t('menu.data-dic.product')
+        }
       }
     ]
   },

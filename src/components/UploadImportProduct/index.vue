@@ -97,8 +97,10 @@ const beforeUpload: UploadProps['beforeUpload'] = (file) => {
   })
 }
 const mapping = {
-  name: '名称',
-  content: '内容',
+  name: '产品名称',
+  type: '产品型号',
+  code: 'FNSKU',
+  title: '简化标题',
   num: '数量'
 }
 const formatData = (list: any) => {
@@ -106,7 +108,9 @@ const formatData = (list: any) => {
   const _list = cloneDeep(list || [])
   arr = _list.map((item: any) => ({
     name: item[mapping.name],
-    content: item[mapping.content],
+    type: item[mapping.type],
+    code: item[mapping.code],
+    title: item[mapping.title],
     num: item[mapping.num]
   }))
   return arr
@@ -121,7 +125,9 @@ const handelData = (list: any) => {
         _arr.push({
           id: uuidv4(),
           name: item.name,
-          content: item.content
+          type: item.type,
+          code: item.code,
+          title: item.title
         })
       }
     }

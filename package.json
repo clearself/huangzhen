@@ -9,6 +9,7 @@
     "dev:prod": "vite --mode production",
     "build": "vite build",
     "preview": "vite preview",
+    "dep": "scp -r dist/* root@101.43.221.193:/www/wwwroot/fly/huangzhen",
     "format": "prettier --write \"src/**/*.{vue,js,jsx,ts,tsx,json,css,less,scss,html,md}\""
   },
   "dependencies": {

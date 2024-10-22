@@ -135,5 +135,6 @@ export default {
   'menu.pay-manger.return-order.edit': 'Edit purchase return settlement form',
   'menu.pay-manger.return-order.detail': 'Purchase return settlement details',
   'menu.data-dic': 'Data manage.',
-  'menu.data-dic.enumer': 'Import/Export'
+  'menu.data-dic.enumer': 'Content export',
+  'menu.data-dic.product': 'Product export'
 }

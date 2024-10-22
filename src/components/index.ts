@@ -14,6 +14,8 @@ import OrderProcess from './OrderProcess/index.vue'
 import UploadAnnex from './UploadAnnex/index.vue'
 // 导入上传组件封装
 import UploadImport from './UploadImport/index.vue'
+// 导入上传组件封装
+import UploadImportProduct from './UploadImportProduct/index.vue'
 // 采购单单选公共组件封装
 import MapPurchaseOrder from './MapPurchaseOrder/index.vue'
 // 下拉选搜索分页组件封装
@@ -32,7 +34,8 @@ const components: { [name: string]: Component } = {
   UploadImport,
   MapPurchaseOrder,
   PageSelect,
-  XConfirm
+  XConfirm,
+  UploadImportProduct
 }
 export default {
   install(app: App) {

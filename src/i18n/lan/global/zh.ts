@@ -135,5 +135,6 @@ export default {
   'menu.pay-manger.return-order.edit': '编辑采购退货结算单',
   'menu.pay-manger.return-order.detail': '采购退货结算单详情',
   'menu.data-dic': '数据管理',
-  'menu.data-dic.enumer': '导入导出'
+  'menu.data-dic.enumer': '内容导出',
+  'menu.data-dic.product': '产品导出'
 }

@@ -45,8 +45,7 @@
       </a-table>
     </div>
   </a-card>
-
-  <UploadImport title="数据导入" v-model:show="showUpload" @success="successBack" />
+  <UploadImportProduct title="数据导入" v-model:show="showUpload" @success="successBack" />
 </template>
 
 <script setup lang="ts">
@@ -108,10 +107,13 @@ const exportExcelTable = (json: any[], name: string, titleArr: string[], sheetNa
   // data.splice(0, 0, fields);
 
   const ws = XLSX.utils.aoa_to_sheet(data)
+  const wch = [{ wch: 12 }, { wch: 12 }, { wch: 12 }, { wch: 50 }] // 设置列宽
   const wb = XLSX.utils.book_new()
+
   // 此处隐藏英文字段表头
   const wsrows = [{ hidden: false }]
   ws['!rows'] = wsrows // ws - worksheet
+  ws['!cols'] = wch // 设置列宽
   XLSX.utils.book_append_sheet(wb, ws, sheetName)
   /* generate file and send to client */
   XLSX.writeFile(wb, name + '.xlsx')
@@ -125,8 +127,8 @@ const exportToExcelSelected = () => {
     message.warning('请至少选择一条数据')
     return
   }
-  const titleArr = ['名称', '内容'] //表头第一行从左到右
-  const fields = ['name', 'content'] //标题对应的字段名
+  const titleArr = ['产品名称', '产品型号', 'FNSKU', '简化标题'] //表头第一行从左到右
+  const fields = ['name', 'type', 'code', 'title'] //标题对应的字段名
   exportExcelTable(selectedRows.value, fileName.value, titleArr, 'sheetName', fields) //列表变量名、文件名、第一行标题、表名、字段名
 }
 const exportToExcel = () => {
@@ -134,8 +136,8 @@ const exportToExcel = () => {
     message.warning('请先导入数据')
     return
   }
-  const titleArr = ['名称', '内容'] //表头第一行从左到右
-  const fields = ['name', 'content'] //标题对应的字段名
+  const titleArr = ['产品名称', '产品型号', 'FNSKU', '简化标题'] //表头第一行从左到右
+  const fields = ['name', 'type', 'code', 'title'] //标题对应的字段名
   exportExcelTable(allList.value, fileName.value, titleArr, 'sheetName', fields) //列表变量名、文件名、第一行标题、表名、字段名
 }
 </script>
